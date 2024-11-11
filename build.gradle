@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.1.0'
+    implementation 'io.github.bonigarcia:webdrivermanager:5.0.3'
+    // Selenium for testing
+    testImplementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.25.0'
+
+    // Commons IO for file operations, if needed
+    testImplementation group: 'commons-io', name: 'commons-io', version: '2.17.0'
+    testImplementation 'com.google.code.gson:gson:2.8.8' // For JSON parsing
+}
+
+test {
+    useJUnitPlatform()
+}
